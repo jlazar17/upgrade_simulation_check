@@ -24,7 +24,7 @@ def main(pdg_encoding, elep, position, outfile, n):
         position=position,
         Streams=[icetray.I3Frame.DAQ]
     )
-    tray.AddModule("I3Writer", 'writer', Filename="outfile")
+    tray.AddModule("I3Writer", 'writer', Filename=outfile)
     tray.AddModule("TrashCan", "trash")
     tray.Execute(n)
 
