@@ -8,7 +8,12 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.11"
 click = "^8.1.7"
+pycondor = "^0.6.0"
+numpy = "1.25.0"
 
+
+[tool.poetry.group.dev.dependencies]
+ipython = "^8.22.2"
 
 [build-system]
 requires = ["poetry-core"]
