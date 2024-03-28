@@ -4,12 +4,28 @@ Checks we done using the `gen2_simprod` branch of icetray at commit `7c15abc2144
 
 # Usage
 
+First we need to load our icetray environment.
+Change this as appropriate
+
+```bash
+eval `/cvmfs/icecube.opensciencegrid.org/py3-v4.3.0/setup.sh`
+source /data/user/jlazar/icetrays/Gen2Sim/build/env-shell.sh
+```
+
+The we need to source the global variables from the `setup.sh`
+
+```bash
+cd ..
+source setup.sh
+cd 1_ppc_prop
+```
+
 ```bash
 python $I3_SRC/simprod-scripts/resources/scripts/ppc.py \
     --inputfilelist $DATADIR/${DATAPREFIX}injection.i3.zst \
     --outputfile $DATADIR/${DATAPREFIX}ppc_photons.i3.zst \
     --gcdfile $GCDFILE \
-    --oversize=5 \
+    --oversize=$OVERSIZE \
     --UseGSLRNG \
     --StorePhotons --StorePhotonsSeries \
     --holeiceparametrization $ANGSENS \
@@ -23,10 +39,12 @@ python $I3_SRC/simprod-scripts/resources/scripts/ppc.py \
     --inputfilelist $DATADIR/${DATAPREFIX}injection.i3.zst \
     --outputfile $DATADIR/${DATAPREFIX}ppc_photons.i3.zst \
     --gcdfile $GCDFILE \
-    --oversize=5 \
+    --oversize=$OVERSIZE \
     --UseGSLRNG \
     --StorePhotons --StorePhotonsSeries \
     --holeiceparametrization $ANGSENS \
     --IceModel $ICEMODEL \
     --no-UseGPUs
 ```
+
+
