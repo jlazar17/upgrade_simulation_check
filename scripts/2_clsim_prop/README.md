@@ -1,8 +1,8 @@
 # About
 
 This step will propagate the photons produced by the injected charged leptons to the surface of the OMs using CLSim.
-This relies on the `icecube_upgrade` branch of icetray.
-At this time of the writing the version on GitHub did not compile directly, and so I used a precompiled version in the CVMFS.
+This relies on the `icecube_upgrade` branch of icetray at commit 4b6fe9dce96fdc99d74a553f5d914e88b8e5dccb.
+This commit does not compile with python 3.11.
 
 # Usage
 
@@ -10,7 +10,7 @@ If you are in the environment from the previous two steps, you will need to `exi
 
 ```bash
 eval `/cvmfs/icecube.opensciencegrid.org/py3-v4.2.1/setup.sh`
-/cvmfs/icecube.opensciencegrid.org/users/upgrade-sim/software/icetray/branches/icecube_upgrade/build__py3-v4.2.1/env-shell.sh
+source /data/user/jlazar/icetrays/Upgrade/build/env-shell.sh
 ```
 
 The we need to source the global variables from the `setup.sh`
