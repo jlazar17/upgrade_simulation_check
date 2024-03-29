@@ -1,30 +1,11 @@
-# Example usage
+# Scripts
 
-First you have to edit the setup script to change paths and such if you want.
-Then you can 
-```bash
-source setup.sh
-```
+This is where the scripts that you will have to run can be found.
+Each script is in a directory and the index at the front of the directory reflects the order in which the scripts should be run.
+Since we are comparing across branches, each directory will point to the branch and commit number that those particular scripts need to use.
+Furthermore, the READMEs will contain example usage of the scripts.
 
-To produce the initial injection run
-```bash
-python inject_leptons.py --position 50 50 -500 --elep 4.5 --pdg_encoding 13 --outfile $DATADIR/${DATAPREFIX}injection.i3.zst -n 1000
-```
+There may be additional convenience bash scripts in a directory.
+At present, I do not describe their function, but they are relatively simple.
 
-Then to run this through `PPC`, run
-
-```bash
-python $I3_SRC/simprod-scripts/resources/scripts/ppc.py --inputfilelist=$DATADIR/${DATAPREFIX}injection.i3.zst --outputfile $DATADIR/${DATAPREFIX}ppc_photons.i3.zst --gcdfile=$GCDFILE --oversize=5 --UseGSLRNG --StorePhotons
-```
-
-If you are not on a device with a GPU, you can instead run
-
-```bash
-python $I3_SRC/simprod-scripts/resources/scripts/ppc.py --inputfilelist=$DATADIR/${DATAPREFIX}injection.i3.zst --outputfile $DATADIR/${DATAPREFIX}ppc_photons.i3.zst --gcdfile=$GCDFILE --oversize=5 --UseGSLRNG --StorePhotons --no-UseGPUs
-```
-
-Then we need to run the injection through `CLSim`
-
-```bash
-
-```
+Happy comparing.
