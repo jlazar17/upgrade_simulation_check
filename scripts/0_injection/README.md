@@ -10,7 +10,7 @@ First we need to load our icetray environment.
 Change this as appropriate
 
 ```bash
-eval `/cvmfs/icecube.opensciencegrid.org/py3-v4.3.0/setup.sh`
+eval `/cvmfs/icecube.opensciencegrid.org/py3-v4.2.1/setup.sh`
 source /data/user/jlazar/icetrays/Gen2Sim/build/env-shell.sh
 ```
 
