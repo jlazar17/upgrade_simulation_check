@@ -17,9 +17,7 @@ source /data/user/jlazar/icetrays/Gen2Sim/build/env-shell.sh
 The we need to source the global variables from the `setup.sh`
 
 ```bash
-cd ..
-source setup.sh
-cd 0_injection
+source ../setup.sh
 ```
 
 Now we inject at a offset from a reference DEgg position

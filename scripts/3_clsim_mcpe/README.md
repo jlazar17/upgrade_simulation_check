@@ -6,8 +6,6 @@ This commit does not compile with python 3.11.
 
 # Usage
 
-If you are in the environment from the previous two steps, you will need to `exit` the shell and then run
-
 ```bash
 eval `/cvmfs/icecube.opensciencegrid.org/py3-v4.2.1/setup.sh`
 source /data/user/jlazar/icetrays/Upgrade/build/env-shell.sh
@@ -22,13 +20,10 @@ source ../setup.sh
 Note that the `-l` and `-r` flags are used for random number seeding and so they should be changed on a per-run basis
 
 ```bash
-python ${I3_SRC}/oscNext/resources/scripts/mc_production/step2_G4_photon_prop.py \
-    --infile $DATADIR/${DATAPREFIX}injection.i3.zst \
-    --outfile $DATADIR/${DATAPREFIX}clsim_photons.i3.zst \
-    -g $GCDFILESTEP2 \
-    -r 925 -l 925 \
-    -m ICEMODEL/${ICEMODEL} \
+python clsim_mcpe_converter.py \
+    --infile $DATADIR/${DATAPREFIX}clsim_photons.i3.zst \
+    --outfile $DATADIR/clsim_mcpe/${DATAPREFIX}clsim_mcpe.i3.zst \
+    -g $GCDFILE\
     -a ANGSENS/angsens/${ANGSENS} \
-    --oversize ${OVERSIZE} \
     -e $EFFICIENCY
 ```
