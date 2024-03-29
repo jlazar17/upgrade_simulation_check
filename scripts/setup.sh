@@ -9,7 +9,7 @@ export GCDFILESTEP2="/data/sim/IceCubeUpgrade/geometries/GCDs/GeoCalibDetectorSt
 
 export ANGSENS="as.flasher_p1_0.30_p2_-1"
 export ICEMODEL="spice_bfr-v2"
-export OVERSIZE=3
+export OVERSIZE=1 # CLSim will blow a gasket when converting to MCPE if this isn't 1
 export GLASS=vitrovex
 export EFFICIENCY=1.2
 
