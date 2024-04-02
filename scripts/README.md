@@ -9,3 +9,10 @@ There may be additional convenience bash scripts in a directory.
 At present, I do not describe their function, but they are relatively simple.
 
 Happy comparing.
+
+# Notes
+
+## Thoughts on what could be causing issues
+
+- [Tinalu] Are there differences in the GCD files and specifically the SPE templates.
+- [Benedikt] GEANT4 vs CMC + PROPOSAL differences.
