@@ -5,6 +5,43 @@ from icecube.icetray import I3Tray
 
 from upgrade_simulation_check.add_lepton import add_lepton
 
+def initialize_args():
+    from argparse import ArgumentParser
+    parser = ArgumentParser()
+    parser.add_argument(
+        "--pdg_encoding",
+        type=int,
+        required=True,
+        help="PDG code of the charged lepton to inject"
+    )
+    parser.add_argument(
+        "--elep",
+        type=float,
+        required=True,
+        help="Energy of the lepton in GeV"
+    )
+    parser.add_argument(
+        "--position",
+        type=float,
+        nargs=3,
+        required=True,
+        help="x y z position at which to inject the particle"
+    )
+    parser.add_argument(
+        "-o",
+        "--outfile",
+        type=str,
+        required=True,
+        help="Output i3 file name"
+    )
+    parser.add_argument(
+        "-n",
+        type=int,
+        help="How many leptons to inject at input position"m
+        default=100
+    )
+    return parser.parse_args()
+
 def dumb_float(x):
     splitchar = "+" if "+" in x else "-"
     op = "__add__" if "+" in x  else "__sub__"
@@ -18,13 +55,8 @@ def dumb_float(x):
         y = getattr(y, op)(float(yp))
     return y
 
-@click.command()
-@click.option('--pdg_encoding', prompt="PDG encoding", help='PDG MC code for the lepton to be added', type=int)
-@click.option('--elep', prompt="Lepton energy", help='Energy of the lepton (GeV)', type=float)
-@click.option('--position', prompt="Optical module position", nargs=3, help='x,y,z, coordinates of the particle (m)', type=dumb_float)
-@click.option('--outfile', prompt="Output file path", default="test_injection.i3.zst", help='Where to put the resulting I3 file')
-@click.option('-n', prompt="Number of leptons to inject", default=100, help='How many leptons to inject', type=int)
-def main(pdg_encoding, elep, position, outfile, n):
+def main():
+    args = initialize_args()
     tray = I3Tray()
     tray.AddModule(
         "I3InfiniteSource", "TheSource",
@@ -32,14 +64,14 @@ def main(pdg_encoding, elep, position, outfile, n):
     )
     tray.AddModule(
         add_lepton,
-        pdg_encoding=pdg_encoding,
-        elep=elep,
-        position=position,
+        pdg_encoding=args.pdg_encoding,
+        elep=args.elep,
+        position=args.position,
         Streams=[icetray.I3Frame.DAQ]
     )
-    tray.AddModule("I3Writer", 'writer', Filename=outfile)
+    tray.AddModule("I3Writer", 'writer', Filename=args.outfile)
     tray.AddModule("TrashCan", "trash")
-    tray.Execute(n)
+    tray.Execute(args.n)
 
 if __name__=="__main__":
     main()
