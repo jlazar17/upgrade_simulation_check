@@ -6,8 +6,7 @@ authors = ["jlazar17 <jeff.p.lazar@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
-click = "^8.1.7"
+python = "^3.10"
 pycondor = "^0.6.0"
 numpy = "1.25.0"
 
