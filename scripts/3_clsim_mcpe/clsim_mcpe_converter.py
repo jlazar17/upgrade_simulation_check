@@ -38,18 +38,12 @@ parser.add_option("-i", "--infile",
 parser.add_option("-g", "--gcdfile", default=os.getenv('GCDfile'),
                   dest="GCDFILE", help="Read in GCD file")
 # Noise related args...
-parser.add_option("-b", "--mdomglass", default="vitrovex",
-                  dest="GLASS", help="mDOM Glass")
 # Ice and detector args...
-#parser.add_option("-m","--icemodel", default="spice_lea",
-#                   dest="ICEMODEL",help="Ice model (spice_mie, spice_lea, etc)")
 parser.add_option("-a", "--holeice",  default=None, dest="HOLEICE",
                   help="Pick the hole ice parameterization, corresponds to a file name path relative to $I3_SRC/ice-models/resources/models/")
 parser.add_option("-e","--efficiency", default=None, action='append',
                   dest="EFFICIENCY",help="Module Efficiencies")
 # Other
-parser.add_option("--nevents",type="int",default=None, # Only for noise-only events
-                  dest="NEVENTS", help="Number of noise frames to create")
 (options,args) = parser.parse_args()
 
 if len(args) != 0:
@@ -60,8 +54,6 @@ if len(args) != 0:
         parser.error(crap)
 
 assert options.INFILE is not None, "Must provide an input file"
-assert options.NEVENTS is None, "Cannot specify number of events unless in noise-only mode"
-#assert options.ICEMODEL is not None
 assert options.HOLEICE is not None
 assert options.EFFICIENCY is not None
 
