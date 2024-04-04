@@ -4,18 +4,19 @@ Checks we done using the `gen2_simprod` branch of icetray at commit `7c15abc2144
 
 # Usage
 
-First we need to load our icetray environment.
+First, we need to source the global variables from the `setup.sh`.
+Change these variables as appropriate.
+
+```bash
+source ../setup.sh
+```
+
+Then, we need to load our icetray environment.
 Change this as appropriate
 
 ```bash
 eval `/cvmfs/icecube.opensciencegrid.org/py3-v4.2.1/setup.sh`
-source /data/user/jlazar/icetrays/Gen2Sim/build/env-shell.sh
-```
-
-The we need to source the global variables from the `setup.sh`
-
-```bash
-source ../setup.sh
+source ${GEN2BUILDDIR}/env-shell.sh
 ```
 
 ```bash

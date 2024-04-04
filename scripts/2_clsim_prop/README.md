@@ -6,18 +6,21 @@ This commit does not compile with python 3.11.
 
 # Usage
 
-If you are in the environment from the previous two steps, you will need to `exit` the shell and then run
-
-```bash
-eval `/cvmfs/icecube.opensciencegrid.org/py3-v4.2.1/setup.sh`
-source /data/user/jlazar/icetrays/Upgrade/build/env-shell.sh
-```
-
-The we need to source the global variables from the `setup.sh`
+First, we need to source the global variables from the `setup.sh`
 
 ```bash
 source ../setup.sh
+
 ```
+
+Next let's get our Python version and icetray loaded up.
+
+```bash
+eval `/cvmfs/icecube.opensciencegrid.org/py3-v4.2.1/setup.sh`
+source ${UPGRADEBUILDDIR}/env-shell.sh
+```
+
+To run the script, we use:
 
 Note that the `-l` and `-r` flags are used for random number seeding and so they should be changed on a per-run basis
 
@@ -30,5 +33,5 @@ python ${I3_SRC}/oscNext/resources/scripts/mc_production/step2_G4_photon_prop.py
     -m ICEMODEL/${ICEMODEL} \
     -a ANGSENS/angsens/${ANGSENS} \
     --oversize ${OVERSIZE} \
-    -e $EFFICIENCY
+    -e $MAXEFFICIENCY
 ```

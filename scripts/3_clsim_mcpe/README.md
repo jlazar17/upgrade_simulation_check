@@ -25,5 +25,5 @@ python clsim_mcpe_converter.py \
     --outfile $DATADIR/clsim_mcpe/${DATAPREFIX}clsim_mcpe.i3.zst \
     -g $GCDFILE\
     -a ANGSENS/angsens/${ANGSENS} \
-    -e $EFFICIENCY
+    -e $NOMINALEFFICIENCY
 ```
