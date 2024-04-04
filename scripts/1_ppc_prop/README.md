@@ -28,7 +28,8 @@ python $I3_SRC/simprod-scripts/resources/scripts/ppc.py \
     --UseGSLRNG \
     --StorePhotons --StorePhotonsSeries \
     --holeiceparametrization $ANGSENS \
-    --IceModel $ICEMODEL
+    --IceModel $ICEMODEL \
+    --KeepEmptyEvents
 ```
 
 If you are not on a device with a GPU, you can instead run
@@ -43,6 +44,7 @@ python $I3_SRC/simprod-scripts/resources/scripts/ppc.py \
     --StorePhotons --StorePhotonsSeries \
     --holeiceparametrization $ANGSENS \
     --IceModel $ICEMODEL \
+    --KeepEmptyEvents \
     --no-UseGPUs
 ```
 

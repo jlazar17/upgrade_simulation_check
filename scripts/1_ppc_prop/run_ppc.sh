@@ -23,5 +23,6 @@ do
         --StorePhotons --StorePhotonsSeries \
         --holeiceparametrization $ANGSENS \
         --IceModel $ICEMODEL \
+        --KeepEmptyEvents \
         --no-UseGPUs
 done
