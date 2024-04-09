@@ -27,8 +27,9 @@ python $I3_SRC/simprod-scripts/resources/scripts/ppc.py \
     --oversize=$OVERSIZE \
     --UseGSLRNG \
     --StorePhotons --StorePhotonsSeries \
-    --holeiceparametrization $ANGSENS \
+    --holeiceparametrization $I3_SRC/ice-models/resources/models/ANGSENS/angsens/$ANGSENS \
     --IceModel $ICEMODEL \
+    --no-RunMPHitFilter \
     --KeepEmptyEvents
 ```
 
@@ -42,9 +43,10 @@ python $I3_SRC/simprod-scripts/resources/scripts/ppc.py \
     --oversize=$OVERSIZE \
     --UseGSLRNG \
     --StorePhotons --StorePhotonsSeries \
-    --holeiceparametrization $ANGSENS \
+    --holeiceparametrization $I3_SRC/ice-models/resources/models/ANGSENS/angsens/$ANGSENS \
     --IceModel $ICEMODEL \
     --KeepEmptyEvents \
+    --no-RunMPHitFilter \
     --no-UseGPUs
 ```
 

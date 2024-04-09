@@ -21,8 +21,9 @@ do
         --oversize=$OVERSIZE \
         --UseGSLRNG \
         --StorePhotons --StorePhotonsSeries \
-        --holeiceparametrization $ANGSENS \
+        --holeiceparametrization $I3_SRC/ice-models/resources/models/ANGSENS/angsens/$ANGSENS \
         --IceModel $ICEMODEL \
         --KeepEmptyEvents \
+        --no-RunMPHitFilter \
         --no-UseGPUs
 done
