@@ -27,7 +27,6 @@ def initialize_args():
 def main():
 
     args = initialize_args()
-    print(args)
     output = f"{args.prefix}/output/"
     log = f"{args.prefix}/log/"
     error = f"{args.prefix}/error/"
