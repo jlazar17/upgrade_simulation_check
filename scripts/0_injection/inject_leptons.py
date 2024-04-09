@@ -1,9 +1,9 @@
-import click
-
 from icecube import dataio, icetray
 from icecube.icetray import I3Tray
 
 from upgrade_simulation_check.add_lepton import add_lepton
+
+
 
 def initialize_args():
     from argparse import ArgumentParser
@@ -22,7 +22,7 @@ def initialize_args():
     )
     parser.add_argument(
         "--position",
-        type=float,
+        type=dumb_float,
         nargs=3,
         required=True,
         help="x y z position at which to inject the particle"
@@ -37,7 +37,7 @@ def initialize_args():
     parser.add_argument(
         "-n",
         type=int,
-        help="How many leptons to inject at input position"m
+        help="How many leptons to inject at input position",
         default=100
     )
     return parser.parse_args()
